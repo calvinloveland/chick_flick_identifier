@@ -66,15 +66,14 @@ def load_movie_data():
 
 
 # Collect movie data from user
-def collect_movie_data(known_chick_flick):
+def collect_movie_data():
     movie_data = {}
     movie_data['title'] = input('Enter the title of the movie: ')
     movie_data['year'] = input('Enter the year of the movie: ')
     movie_data['genre'] = input('Enter the genre of the movie: ')
     movie_data['rating'] = input('Enter the rating of the movie: ')
     movie_data['summary'] = input('Enter the summary of the movie: ')
-    if known_chick_flick:
-        movie_data['chick_flick'] = input('Is this a chick flick? (y/n): ')
+    movie_data['chick_flick'] = input('Is this a chick flick? (y/n): ')
     return movie_data
 
 if __name__ == '__main__':
@@ -85,7 +84,7 @@ if __name__ == '__main__':
     model = train_model()
 
     # Collect movie data from user
-    movie_data = collect_movie_data(False)
+    movie_data = collect_movie_data()
 
     # Predict if the movie is a chick flick
     predict_chick_flick(movie_data, model, tokenizer)
